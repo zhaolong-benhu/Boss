@@ -1,0 +1,21 @@
+.tvlist{
+  width: 970px;
+  height: 206px;
+  align-items: left;
+  text-align:center;
+  margin:0 auto;
+  margin-top: 50px;
+}
+.list1{
+  width: 294px;
+  height: 206px;
+  align-items: left;
+  float: left;
+}
+.list2{
+  width: 294px;
+  height: 206px;
+  align-items: left;
+    float: left;
+  margin-left: 44px;
+}

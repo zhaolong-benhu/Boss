@@ -1,0 +1,776 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+      <title>首页</title>
+      <meta charset="utf-8">
+      <!-- <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> -->
+      <link rel="stylesheet" href="css/Home.css"></link>
+      <link rel="stylesheet" href="css/font.css"></link>
+      <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+      <script type="text/javascript" src="js/TV.js"></script>
+      <link rel="Stylesheet" type="text/css" href="style/loginDialog.css" />
+
+      <style>
+        body{
+          background-color: #EEEEEE;
+          height: 4240px;
+        }
+      </style>
+
+  </head>
+
+    <script>
+
+
+       var index = 8;
+
+        $('#item_id').on('click', function (){
+
+        })
+
+        function center(width,height)
+          {
+
+          return $(this).css("left", ($(window).width()-width)/2+$(window).scrollLeft()).
+          css("top", ($(window).height()-height)/2+$(window).scrollTop()).
+          css("width",width).
+          css("height",height);
+          }
+
+          function  login(obj)
+          {
+              $("body").append("<div id='mask'></div>");
+              $("#mask").addClass("mask").fadeIn("slow");
+              // $("#LoginBox").fadeIn("slow");
+
+                $("#LoginBox").show();
+                this.center(534,650);
+                //center(534,650);//展现登陆框 ;
+              // ajaxFunction('http://127.0.0.1:8081/v1.0/home');
+          }
+
+          function OnClose(obj)
+          {
+            $("#LoginBox").fadeOut("fast");
+            $("#mask").css({ display: 'none' });
+          }
+
+          function saveReport() {
+
+            }
+
+          function OnCommit(obj)
+          {
+            var txtName = $("#txtName").val();
+            var txtContacts = $("#txtContacts").val();
+            var txtphone = $("#txtphone").val();
+            var txtjob = $("#txtjob").val();
+            var txtRequirement = $("#txtRequirement").val();
+
+            // var strResult = txtName+txtContacts+txtphone+txtjob+txtRequirement;
+            // alert(strResult);
+
+            //提交boss报名信息
+              if(txtName=="" || txtContacts=="" || txtphone=="" || txtjob=="" || txtRequirement=="")
+              {
+                return;
+              }
+              else
+               {
+                 //退出窗口
+                //  $("#LoginBox").fadeOut("fast");
+                //  $("#mask").css({ display: 'none' });
+
+                 //发请求
+
+                 //var url = 'http://10.10.29.119/wwwroot/dave/index.php?m=bosswait&c=signup/'+'company='+txtName+'/contacts='+txtContacts+'/txtphone='+txtphone+'/txtjob'+txtjob+''+
+                 //ajaxFunction(url);
+              }
+          }
+
+
+          function OnClickedTv1(obj)
+          {
+            $("#tv1").css({ color: '#f2630c' });
+            $("#tv2").css({ color: '#333333' });
+            $("#tv3").css({ color: '#333333' });
+            $("#tv4").css({ color: '#333333' });
+
+            document.getElementById('tv1').style.backgroundImage="url(images/curplay.png)";
+            document.getElementById('tv2').style.backgroundImage="url(images/noplay.png)";
+            document.getElementById('tv3').style.backgroundImage="url(images/noplay.png)";
+            document.getElementById('tv4').style.backgroundImage="url(images/noplay.png)";
+
+            document.getElementById('playTv').style.backgroundImage="url(images/TV/tv1.png)";
+
+
+
+          }
+          function OnClickedTv2(obj)
+          {
+            $("#tv2").css({ color: '#f2630c' });
+            $("#tv1").css({ color: '#333333' });
+            $("#tv3").css({ color: '#333333' });
+            $("#tv4").css({ color: '#333333' });
+            document.getElementById('tv2').style.backgroundImage="url(images/curplay.png)";
+            document.getElementById('tv1').style.backgroundImage="url(images/noplay.png)";
+            document.getElementById('tv3').style.backgroundImage="url(images/noplay.png)";
+            document.getElementById('tv4').style.backgroundImage="url(images/noplay.png)";
+
+            document.getElementById('playTv').style.backgroundImage="url(images/TV/tv2.png)";
+
+          }
+
+          function OnClickedTv3(obj)
+          {
+            $("#tv3").css({ color: '#f2630c' });
+            $("#tv1").css({ color: '#333333' });
+            $("#tv2").css({ color: '#333333' });
+            $("#tv4").css({ color: '#333333' });
+            document.getElementById('tv3').style.backgroundImage="url(images/curplay.png)";
+            document.getElementById('tv1').style.backgroundImage="url(images/noplay.png)";
+            document.getElementById('tv2').style.backgroundImage="url(images/noplay.png)";
+            document.getElementById('tv4').style.backgroundImage="url(images/noplay.png)";
+
+            document.getElementById('playTv').style.backgroundImage="url(images/TV/tv3.png)";
+
+          }
+
+          function OnClickedTv4(obj)
+          {
+            $("#tv4").css({ color: '#f2630c' });
+            $("#tv1").css({ color: '#333333' });
+            $("#tv2").css({ color: '#333333' });
+            $("#tv3").css({ color: '#333333' });
+            document.getElementById('tv4').style.backgroundImage="url(images/curplay.png)";
+            document.getElementById('tv1').style.backgroundImage="url(images/noplay.png)";
+            document.getElementById('tv2').style.backgroundImage="url(images/noplay.png)";
+            document.getElementById('tv3').style.backgroundImage="url(images/noplay.png)";
+
+            document.getElementById('playTv').style.backgroundImage="url(images/TV/tv4.png)";
+
+          }
+
+
+          function OnAddbossyinxiang(obj){
+            $("#inputyinxiang").css({ display: 'block' });
+          }
+
+          function  OnCommityinxiang(obj){
+            $("#inputyinxiang").css({ display: 'none' });
+
+            var user_input = document.getElementById("input_yinxiang").value;
+            if('' == user_input)
+            {
+              return;
+            }
+
+
+            // label.innerHTML=v;
+            index++;
+            if(index == 9)
+            {
+              $("#yinxiang_9").css({ display: 'block' });
+              document.getElementById('yinxiang_9').innerHTML = user_input;
+            }
+            if(index == 10)
+            {
+              $("#yinxiang_10").css({ display: 'block' });
+              document.getElementById('yinxiang_10').innerHTML = user_input;
+            }
+            if(index == 11)
+            {
+              $("#yinxiang_11").css({ display: 'block' });
+              document.getElementById('yinxiang_11').innerHTML = user_input;
+            }
+            if(index == 12)
+            {
+              $("#yinxiang_12").css({ display: 'block' });
+              document.getElementById('yinxiang_12').innerHTML = user_input;
+            }
+            if(index == 13)
+            {
+              $("#yinxiang_13").css({ display: 'block' });
+              document.getElementById('yinxiang_13').innerHTML = user_input;
+            }
+            if(index == 14)
+            {
+              $("#yinxiang_14").css({ display: 'block' });
+              document.getElementById('yinxiang_14').innerHTML = user_input;
+            }
+            if(index == 15)
+            {
+              $("#yinxiang_15").css({ display: 'block' });
+              document.getElementById('yinxiang_15').innerHTML = user_input;
+            }
+            if(index == 16)
+            {
+              $("#yinxiang_16").css({ display: 'block' });
+              document.getElementById('yinxiang_16').innerHTML = user_input;
+
+              $("#tianjia").css({ display: 'none' });
+
+            }
+          }
+                // AJAX方法, 被自定义封装在该函数中
+                function ajaxFunction( url )
+                {
+                 var xmlHttp;
+                 try
+                 {
+                   xmlHttp = new XMLHttpRequest();    // 实例化对象
+                 }
+                 catch( e )
+                 {
+                  try
+                  {
+                   xmlHttp = new ActiveXObject( "Msxml2.XMLHTTP" );
+                  }
+                  catch ( e )
+                  {
+                     try
+                     {
+                      xmlHttp = new ActiveXObject( "Microsoft.XMLHTTP" );
+                     }
+                     catch( e )
+                     {
+                      alert("您的浏览器不支持AJAX！");
+                      return false;
+                     }
+                  }
+                 }
+                 xmlHttp.onreadystatechange = function()
+                 {
+                  alert("come fun");
+                  if( xmlHttp.readyState == 4  && xmlHttp.status == 200 )
+                  {
+                    alert("data");
+                    var a = xmlHttp.responseText;
+
+                  //  document.getElementByIdx_x_x_x( 'sub' ).value =  xmlHttp.responseText;
+                  }
+                 }
+                 xmlHttp.open( "GET", url, true );
+                 xmlHttp.send( null );
+                }
+
+
+
+    </script>
+
+  <body>
+      <div id="LoginBox">
+        <form action="http://10.10.29.119/wwwroot/dave/index.php?m=bosswait&c=signup&a=insert_boss_signup" method="post">
+          <div class="row1">
+              <div class="headbg"></div>
+              <div class="head"></div>
+              <div class="close" title="关闭窗口" onclick="OnClose(this)"></div>
+          </div>
+
+          <div class="row">
+              企业名称:
+                  <input type="text" id="txtName" name="company" class="inputBox" placeholder="企业名称" required="true"/>
+          </div>
+
+          <div class="row">
+              联&nbsp;&nbsp;系&nbsp;&nbsp;人:
+                  <input type="text" id="txtContacts" name="contacts" class="inputBox" placeholder="联系人" required="true"/>
+          </div>
+
+          <div class="row">
+              联系电话:
+                  <input type="number" id="txtphone" name="phone" class="inputBox" placeholder="联系电话" required="true"/>
+          </div>
+
+          <div class="row">
+              职位名称:
+                  <input type="text" id="txtjob"  name="jobname" class="inputBox" placeholder="职位名称" required="true"/>
+          </div>
+          <div class="row">
+              岗位要求:
+          </div>
+          <textarea type="text" id="txtRequirement" name="jobreq" class="requirement" required="true"></textarea>
+
+          <div class="row">
+              <input class="btn" type="submit" ></div>
+          </div>
+      </form>
+
+      </div>
+
+            <script>
+            $(function ($) {
+          		//弹出登录
+          		$("#example").hover(function () {
+          			$(this).stop().animate({
+          				opacity: '1'
+          			}, 600);
+          		}, function () {
+          			$(this).stop().animate({
+          				opacity: '0.6'
+          			}, 1000);
+          		}).on('click', function () {
+          			$("body").append("<div id='mask'></div>");
+          			$("#LoginBox").fadeIn("slow");
+                $("#mask").addClass("mask").fadeIn("slow");
+                $("#loginbtn").hover(function () {
+          		});
+
+          		//按钮的透明度
+          			$(this).stop().animate({
+          				opacity: '1'
+          			}, 600);
+          		}, function () {
+          			$(this).stop().animate({
+          				opacity: '0.8'
+          			}, 1000);
+          		});
+          		//文本框不允许为空---按钮触发
+          		// $("#loginbtn").on('click', function () {
+              //
+          		// 	var txtName = $("#txtName").val();
+          		// 	var txtContacts = $("#txtContacts").val();
+              //   var txtphone = $("#txtphone").val();
+          		// 	var txtjob = $("#txtjob").val();
+              //   var txtRequirement = $("#txtRequirement").val();
+              //
+              //   alert(txtName);
+              //   alert(txtContacts);
+              //   alert(txtRequirement);
+              //
+          		// });
+
+          		//关闭
+          		$(".close_btn").hover(function () { $(this).css({ color: 'black' }) }, function () { $(this).css({ color: '#999' }) }).on('click', function () {
+          			$("#LoginBox").fadeOut("fast");
+          			$("#mask").css({ display: 'none' });
+          		});
+          	});
+
+
+            $(function () {
+              var $form = $('#LoginBox>form');
+              $form.on('submit', function (ev) {
+                console.log($form.serialize());
+
+                $.ajax({
+                  url: $form.attr('action') + '&' + $form.serialize(),
+                  method: 'get',
+                  success: function ()
+                  {
+                    alert('submit OK');
+                  }
+
+
+                })
+
+                ev.stopPropagation();
+                ev.preventDefault();
+
+                return false;
+              })
+            })
+
+          	</script>
+
+            <div class="banner-bg">
+            </div>
+            <div class="banner">
+            </div>
+
+            <div class="program">
+            </div>
+
+            <div class="signup">
+              <div class="personal"></div>
+              <div class="boss">
+                  <a href="#" onclick="login(this)">
+                    <img class="boss-signup"/>
+                  </a>
+                    <!-- <a href="http://baidu.com" target="_blank">fdas</a> -->
+              </div>
+              <div class="endorsement">
+                <div class="bpersonal-signup" onclick="window.open('http://www.baidu.com')"  target="_blank">
+                  <!-- <a href="http://baidu.com" target="_blank">fdas</a> -->
+                </div>
+              </div>
+            </div>
+
+            <div class="marvellous">
+                 <div class="personal-tv">
+                   <div class="tv-more" onclick="window.open('TVList.html')" ></div>
+                 </div>
+                 <div class="personal-huifang">
+                   <div class="huifang-more" onclick="window.open('http://www.baidu.com')" ></div>
+                 </div>
+            </div>
+
+            <div class="mytv">
+              <div class="tvleft">
+
+                    <div class="playTv" id="playTv"></div>
+
+                    <div class="tv1" onclick="OnClickedTv1()" id="tv1">
+                      <div class="zhibo">发布会现场</div>
+                      </br>
+                      <div class="zhibo2">现场直播视频</div >
+                    </div>
+                    <div class="tv2" onclick="OnClickedTv2(this)" id="tv2">
+                      <div class="zhibo">发布会现场</div>
+                      </br>
+                      <div class="zhibo2">现场直播视频</div >
+                    </div>
+                    <div class="tv3" onclick="OnClickedTv3(this)" id="tv3">
+                      <div class="zhibo">发布会现场</div>
+                      </br>
+                      <div class="zhibo2">现场直播视频</div >
+                    </div>
+                    <div class="tv4" onclick="OnClickedTv4(this)" id="tv4">
+                      <div class="zhibo">发布会现场</div>
+                      </br>
+                      <div class="zhibo2">现场直播视频</div >
+                    </div>
+              </div>
+              <div class="tvright">
+                  <a class="f1" href="http://www.baidu.com" target="_blank">世博会上买来的小榴莲多个省份发撒旦发</a>
+                  <div class="empty"></div>
+                  <a class="f2">做生意不赚钱是耍流氓，通过客户感受度加上精细化管理让加盟商先赚到钱，公司才能赚钱</a>
+                  </br>
+                  <div class="xuxian"></div>
+                  <div class="empty"></div>
+
+                  <a class="f1">世博会上买来的小榴莲多个省份发撒旦发</a>
+                  <div class="empty"></div>
+                  <a class="f2">做生意不赚钱是耍流氓，通过客户感受度加上精细化管理让加盟商先赚到钱，公司才能赚钱</a>
+                  </br>
+                  <div class="xuxian"></div>
+                  <div class="empty"></div>
+
+                  <a class="f1">世博会上买来的小榴莲多个省份发撒旦发</a>
+                  <div class="empty"></div>
+                  <a class="f2">做生意不赚钱是耍流氓，通过客户感受度加上精细化管理让加盟商先赚到钱，公司才能赚钱</a>
+                  </br>
+                  <div class="xuxian"></div>
+                  <div class="empty"></div>
+
+                  <a class="f1">世博会上买来的小榴莲多个省份发撒旦发</a>
+                  <div class="empty"></div>
+                  <a class="f2">做生意不赚钱是耍流氓，通过客户感受度加上精细化管理让加盟商先赚到钱，公司才能赚钱</a>
+                  </br>
+                  <div class="xuxian"></div>
+                  <div class="empty"></div>
+              </div>
+
+            </div>
+
+            <div class="boss-fengcai"></div>
+            <div class="fengcai">
+                <div class="fengcai-left">
+                    <div class="boss-img">
+
+                    </div>
+                    <div class="boss-yinxiang">
+                      <a style="f2">马云</a>
+                      </br>
+                      <a class="f2">阿里巴巴CEO</a>
+                      </br>
+
+                      <div class="boss-biaoqian"></div>
+                        <div class="biaoqian2 f3" id="yinxiang_1">单纯</div>
+                        <div class="biaoqian2 f3" id="yinxiang_2">有钱</div>
+                        <div class="biaoqian2 f3" id="yinxiang_3">大气</div>
+                        <div class="biaoqian2 f3" id="yinxiang_4">亲和力</div>
+
+                        <div class="biaoqian2 f3" id="yinxiang_5">单纯</div>
+                        <div class="biaoqian2 f3" id="yinxiang_6">有钱</div>
+                        <div class="biaoqian2 f3" id="yinxiang_7">大气</div>
+                        <div class="biaoqian2 f3" id="yinxiang_8">亲和力</div>
+
+                        <div class="biaoqian2 f3" id="yinxiang_9" style="display:none;">单纯</div>
+                        <div class="biaoqian2 f3" id="yinxiang_10" style="display:none;">有钱</div>
+                        <div class="biaoqian2 f3" id="yinxiang_11" style="display:none;">大气</div>
+                        <div class="biaoqian2 f3" id="yinxiang_12" style="display:none;">亲和力</div>
+
+                        <div class="biaoqian2 f3" id="yinxiang_13" style="display:none;">单纯</div>
+                        <div class="biaoqian2 f3" id="yinxiang_14" style="display:none;">有钱</div>
+                        <div class="biaoqian2 f3" id="yinxiang_15" style="display:none;">大气</div>
+                        <div class="biaoqian2 f3" id="yinxiang_16" style="display:none;">大气</div>
+
+                        <div class="tianjia" id="tianjia" onclick="OnAddbossyinxiang(this)"></div>
+
+                        </br>
+                        <span id="inputyinxiang" style="display:none;width:300px;overflow: hidden;">
+                          <input class="dj" type="text" id="input_yinxiang" style="width:200px;margin-left:10px;margin-top:5px" maxlength="5"; placeholder="输入你对Boss的印象"/>
+                          <button text="提交" style="margin-top :10px;width:63px;height:23px;background-color:#EFAE23" onclick="OnCommityinxiang(this)">提交</button>
+                        </span>
+
+                      </div>
+                    </div>
+
+                <div class="fengcai-right">
+                  <div class="boss-img">
+                  </div>
+                  <div class="boss-yinxiang">
+                    <a style="f2">马云</a>
+                    </br>
+                    <a class="f2">阿里巴巴CEO</a>
+                    </br>
+
+                    <div class="boss-biaoqian"></div>
+                      <div class="biaoqian f3">单纯</div>
+                      <div class="biaoqian2 f3">有钱</div>
+                      <div class="biaoqian2 f3">大气</div>
+                      <div class="biaoqian2 f3">亲和力</div>
+
+                      <div class="biaoqian f3">单纯</div>
+                      <div class="biaoqian2 f3">有钱</div>
+                      <div class="biaoqian2 f3">大气</div>
+                      <div class="biaoqian2 f3">亲和力</div>
+
+                      <div class="biaoqian f3">单纯</div>
+                      <div class="biaoqian2 f3">有钱</div>
+                      <div class="biaoqian2 f3">大气</div>
+                      <div class="biaoqian2 f3">亲和力</div>
+
+                      <div class="biaoqian f3">单纯</div>
+                      <div class="biaoqian2 f3">有钱</div>
+                      <div class="biaoqian2 f3">大气</div>
+                      <div class="tianjia"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="fengcai">
+                <div class="fengcai-left">
+                    <div class="boss-img">
+
+                    </div>
+                    <div class="boss-yinxiang">
+                      <a style="f2">马云</a>
+                      </br>
+                      <a class="f2">阿里巴巴CEO</a>
+                      </br>
+
+                       <div class="boss-biaoqian"></div>
+                        <div class="biaoqian f3">单纯</div>
+                        <div class="biaoqian2 f3">有钱</div>
+                        <div class="biaoqian2 f3">大气</div>
+                        <div class="biaoqian2 f3">亲和力</div>
+
+                        <div class="biaoqian f3">单纯</div>
+                        <div class="biaoqian2 f3">有钱</div>
+                        <div class="biaoqian2 f3">大气</div>
+                        <div class="biaoqian2 f3">亲和力</div>
+
+                        <div class="biaoqian f3">单纯</div>
+                        <div class="biaoqian2 f3">有钱</div>
+                        <div class="biaoqian2 f3">大气</div>
+                        <div class="biaoqian2 f3">亲和力</div>
+
+                        <div class="biaoqian f3">单纯</div>
+                        <div class="biaoqian2 f3">有钱</div>
+                        <div class="biaoqian2 f3">大气</div>
+                        <div class="tianjia"></div>
+
+                      </div>
+                    </div>
+
+                <div class="fengcai-right">
+                  <div class="boss-img">
+                  </div>
+                  <div class="boss-yinxiang">
+                    <a style="f2">马云</a>
+                    </br>
+                    <a class="f2">阿里巴巴CEO</a>
+                    </br>
+
+                    <div class="boss-biaoqian"></div>
+                      <div class="biaoqian f3">单纯</div>
+                      <div class="biaoqian2 f3">有钱</div>
+                      <div class="biaoqian2 f3">大气</div>
+                      <div class="biaoqian2 f3">亲和力</div>
+
+                      <div class="biaoqian f3">单纯</div>
+                      <div class="biaoqian2 f3">有钱</div>
+                      <div class="biaoqian2 f3">大气</div>
+                      <div class="biaoqian2 f3">亲和力</div>
+
+                      <div class="biaoqian f3">单纯</div>
+                      <div class="biaoqian2 f3">有钱</div>
+                      <div class="biaoqian2 f3">大气</div>
+                      <div class="biaoqian2 f3">亲和力</div>
+
+                      <div class="biaoqian f3">单纯</div>
+                      <div class="biaoqian2 f3">有钱</div>
+                      <div class="biaoqian2 f3">大气</div>
+                      <div class="tianjia"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="fengcai">
+                <div class="fengcai-left">
+                    <div class="boss-img">
+
+                    </div>
+                    <div class="boss-yinxiang">
+                      <a style="f2">马云</a>
+                      </br>
+                      <a class="f2">阿里巴巴CEO</a>
+                      </br>
+
+                       <div class="boss-biaoqian"></div>
+                        <div class="biaoqian f3">单纯</div>
+                        <div class="biaoqian2 f3">有钱</div>
+                        <div class="biaoqian2 f3">大气</div>
+                        <div class="biaoqian2 f3">亲和力</div>
+
+                        <div class="biaoqian f3">单纯</div>
+                        <div class="biaoqian2 f3">有钱</div>
+                        <div class="biaoqian2 f3">大气</div>
+                        <div class="biaoqian2 f3">亲和力</div>
+
+                        <div class="biaoqian f3">单纯</div>
+                        <div class="biaoqian2 f3">有钱</div>
+                        <div class="biaoqian2 f3">大气</div>
+                        <div class="biaoqian2 f3">亲和力</div>
+
+                        <div class="biaoqian f3">单纯</div>
+                        <div class="biaoqian2 f3">有钱</div>
+                        <div class="biaoqian2 f3">大气</div>
+                        <div class="tianjia"></div>
+
+                      </div>
+                    </div>
+
+                <div class="fengcai-right">
+                  <div class="boss-img">
+                  </div>
+                  <div class="boss-yinxiang">
+                    <a style="f2">马云</a>
+                    </br>
+                    <a class="f2">阿里巴巴CEO</a>
+                    </br>
+
+                    <div class="boss-biaoqian"></div>
+                      <div class="biaoqian f3">单纯</div>
+                      <div class="biaoqian2 f3">有钱</div>
+                      <div class="biaoqian2 f3">大气</div>
+                      <div class="biaoqian2 f3">亲和力</div>
+
+                      <div class="biaoqian f3">单纯</div>
+                      <div class="biaoqian2 f3">有钱</div>
+                      <div class="biaoqian2 f3">大气</div>
+                      <div class="biaoqian2 f3">亲和力</div>
+
+                      <div class="biaoqian f3">单纯</div>
+                      <div class="biaoqian2 f3">有钱</div>
+                      <div class="biaoqian2 f3">大气</div>
+                      <div class="biaoqian2 f3">亲和力</div>
+
+                      <div class="biaoqian f3">单纯</div>
+                      <div class="biaoqian2 f3">有钱</div>
+                      <div class="biaoqian2 f3">大气</div>
+                      <div class="tianjia"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="qiuzhidaren">
+              <div class="more"></div>
+            </div>
+            <div class="qiuzhidaren-zhe">
+              <div class="qiuzhizhe">
+                  <div class="qiuzhizhe-img"></div>
+                  <div class="qiuzhizhe-name">赵龙</div>
+                  <div class="qiuzhizhe-job">前端工程师</div>
+              </div>
+
+              <div class="qiuzhizhe">
+                  <div class="qiuzhizhe-img"></div>
+                  <div class="qiuzhizhe-name">赵龙</div>
+                  <div class="qiuzhizhe-job">前端工程师</div>
+              </div>
+              <div class="qiuzhizhe">
+                  <div class="qiuzhizhe-img"></div>
+                  <div class="qiuzhizhe-name">赵龙</div>
+                  <div class="qiuzhizhe-job">前端工程师</div>
+              </div>
+
+              <div class="qiuzhizhe">
+                  <div class="qiuzhizhe-img"></div>
+                  <div class="qiuzhizhe-name">赵龙</div>
+                  <div class="qiuzhizhe-job">前端工程师</div>
+              </div>
+
+              <div class="qiuzhizhe">
+                  <div class="qiuzhizhe-img"></div>
+                  <div class="qiuzhizhe-name">赵龙</div>
+                  <div class="qiuzhizhe-job">前端工程师</div>
+              </div>
+
+              <div class="qiuzhizhe">
+                  <div class="qiuzhizhe-img"></div>
+                  <div class="qiuzhizhe-name">赵龙</div>
+                  <div class="qiuzhizhe-job">前端工程师</div>
+              </div>
+
+            </div>
+
+            <div class="qiuzhidaren-zhe2">
+              <div class="qiuzhizhe">
+                  <div class="qiuzhizhe-img"></div>
+                  <div class="qiuzhizhe-name">赵龙</div>
+                  <div class="qiuzhizhe-job">前端工程师</div>
+              </div>
+
+              <div class="qiuzhizhe">
+                  <div class="qiuzhizhe-img"></div>
+                  <div class="qiuzhizhe-name">赵龙</div>
+                  <div class="qiuzhizhe-job">前端工程师</div>
+              </div>
+
+              <div class="qiuzhizhe">
+                  <div class="qiuzhizhe-img"></div>
+                  <div class="qiuzhizhe-name">赵龙</div>
+                  <div class="qiuzhizhe-job">前端工程师</div>
+              </div>
+              <div class="qiuzhizhe">
+                  <div class="qiuzhizhe-img"></div>
+                  <div class="qiuzhizhe-name">赵龙</div>
+                  <div class="qiuzhizhe-job">前端工程师</div>
+              </div>
+
+              <div class="qiuzhizhe">
+                  <div class="qiuzhizhe-img"></div>
+                  <div class="qiuzhizhe-name">赵龙</div>
+                  <div class="qiuzhizhe-job">前端工程师</div>
+              </div>
+
+              <div class="qiuzhizhe">
+                  <div class="qiuzhizhe-img"></div>
+                  <div class="qiuzhizhe-name">赵龙</div>
+                  <div class="qiuzhizhe-job">前端工程师</div>
+              </div>
+
+            </div>
+
+            <div class="zhuchuangtuandui">
+            </div>
+            <div class="bottom-bar">
+            </div>
+
+            <div class="aboutus">
+              <a href="http://www.baidu.com" target="_blank" class="guanyuwomen">关于我们 </a>|
+              <a href="http://www.baidu.com" target="_blank" class="guanyuwomen">联系我们 </a>|
+              <a href="http://www.baidu.com" target="_blank" class="guanyuwomen">友情链接 </a>|
+              <a href="http://www.baidu.com" target="_blank" class="guanyuwomen">广告服务 </a>|
+              <a href="http://www.baidu.com" target="_blank" class="guanyuwomen">产品与服务 </a>|
+              <a href="http://www.baidu.com" target="_blank" class="guanyuwomen">常见问题 </a>|
+              <a href="http://www.baidu.com" target="_blank" class="guanyuwomen">客服中心 </a>
+            </div>
+            <div class="banquan">
+              <a>Copy2015-2016 VeryEast.Cn All Right Reserved</a>
+            </div>
+
+
+  </body>
+</html>

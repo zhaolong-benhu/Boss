@@ -1,0 +1,17 @@
+﻿@charset "utf-8";
+.mask{margin:0;padding:0;border:none;width:100%;height:100%;background:#333;opacity:0.6;filter:alpha(opacity=60);z-index:9999;position:fixed;top:0;left:0;display:none;}
+#LoginBox{position:absolute;margin-left: 650px;top:300px;background:white;width:534px;height:650px;border:2px solid #444;border-radius:7px;z-index:10000;display:none;border-radius:5px;}
+.headbg{width: 534px;height: 74px;margin-left: -20px;background-image: url('../images/signhead.png')}
+.head{width: 144px;height: 27px;background-image: url("../images/signup.png");margin-left:195px;margin-top: -50px;}
+.close{width: 37px;height: 37px;background-image: url("../images/close.png");margin-left:488px;margin-top: -60px;}
+.row1{background:#f7f7f7;padding:0px 20px;line-height:50px;height:50px;font-weight:bold;color:#666;font-size:20px;}
+.row{height:57px;line-height:77px;margin-left:40px;margin-top: 20px;font-family:华文楷体;font-size:x-large;}
+.close_btn{font-family:arial;font-size:30px;font-weight:700;color:#999;text-decoration:none;float:right;padding-right:4px;}
+.inputBox{  width: 310px;height: 30px;margin-left: 15px;border: 5;}
+.requirement{margin-left:162px;margin-top:-50px;width:310px;height:120px;max-width: 310px;max-height: 150px;}
+/*#txtName{height:27px;width:320px;border:5;}*/
+#txtPwd{height:27px;width:230px;border:none;}
+.btn{color:White;background:#E37D02;border-radius:5px;opacity:0.8;filter:alpha(opacity=80);width: 290px;height: 55px;background-image: url('../images/commit.png');margin-left: 90px;margin-top: 10px;cursor:pointer; }
+#loginbtn{color:White;background:#E37D02;text-decoration:none;padding:10px 95px;margin-left:87px;margin-top:40px;border-radius:5px;opacity:0.8;filter:alpha(opacity=80);width: 290px;height: 55px}
+#example{position:fixed;left:390px;top:30px;color:White;background:#4490f7;text-decoration:none;padding:10px 95px;margin-left:87px;margin-top:40px;border-radius:5px;opacity:0.6;filter:alpha(opacity=60);}
+.warning{float:right;color:Red;text-decoration:none;font-size:20px;font-weight:bold;margin-right:20px;display:none;}

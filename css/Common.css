@@ -1,0 +1,51 @@
+.banner-bg{
+  width: auto;
+  height: 655px;
+  background-image:url('../images/banner-bg.jpg');
+  background-repeat: no-repeat;
+  margin-left: 0px;
+}
+.banner{
+  width: 1000px;
+  height: 623px;
+  background-image:url('../images/banner.png');
+  background-repeat: no-repeat;
+  align-items: center;
+  text-align:center;
+  margin:0 auto;
+  margin-top: -653px;
+}
+
+
+
+.bottom-bar{
+  width: auto;
+  height: 101px;
+  background-image:url('../images/bottom-bar.png');
+  background-repeat: no-repeat;
+  text-decoration: none;
+  margin-top: 60px;
+}
+.aboutus{
+  text-align: center;
+  margin-top: -75px;
+  cursor: pointer;
+  color: #FFFFFF;
+  font-size: 12px;
+  text-decoration:none;
+  text-decoration: none;
+}
+.guanyuwomen{
+  text-decoration:none;
+  color: #FFFFFF;
+}
+.guanyuwomen:hover{
+  color: red;
+  text-decoration: underline;
+}
+.banquan{
+  text-align: center;
+  color: #FFFFFF;
+  font-size: 12px;
+  margin-top: 20px;
+}
